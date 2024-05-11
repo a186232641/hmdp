@@ -1,5 +1,6 @@
 package com.hmdp.interceptors;
 
+import com.hmdp.dto.UserDTO;
 import com.hmdp.entity.User;
 import com.hmdp.utils.UserHolder;
 import org.springframework.context.annotation.Bean;
@@ -30,7 +31,7 @@ public class LoginInterceptor implements HandlerInterceptor {
             return  false;
         }
         //5.保存到ThreadLocal
-        UserHolder.saveUser((User) user);
+        UserHolder.saveUser((UserDTO) user);
         //6.放行
         return  true;
     }
